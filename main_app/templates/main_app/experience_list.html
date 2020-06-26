@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Experience List</h1>
+
+{% for experience in experience_list %}
+  <a href="{% url 'experiences_detail' experience.id %}">
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">{{ experience.method }}</span>
+            <p>Equipment: {{ experience.equipment }}</p>
+        </div>
+    </div>
+  </a>
+{% endfor %}
+
+{% endblock %}

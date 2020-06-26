@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Sunset List</h1>
+
+{% for sunset in sunsets %}
+<a href="{% url 'detail' sunset.id %}">
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">{{ sunset.title }}</span>
+            <p>Location: {{ sunset.location }}</p>
+            <p>Description: {{ sunset.description }}</p>
+        </div>
+    </div>
+{% endfor %}
+
+{% endblock %}
